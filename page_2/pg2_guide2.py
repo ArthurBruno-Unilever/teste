@@ -21,7 +21,6 @@ def run_guide2():
         ''')
         st.markdown("---")
         st.write("Your spreadsheet must match up to this model for each spreadsheet")
-        st.markdown("---")
         st.write("To see the model check Display Data")
         st.markdown("---")
         st.write("After that, download your CSV file")
