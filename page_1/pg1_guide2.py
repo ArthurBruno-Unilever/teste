@@ -53,7 +53,7 @@ def run_guide2():
         st.write("Follow the example below, your spreadsheet must match up to this model for each spreadsheet:")
         st.markdown("---")
         
-        st.write("After that, download your CSV or xlsx file")
+        st.write("After that, download your CSV file")
         
         st.markdown("---")
         st.write("Finally, click the 'Browse files' button to upload your file:")
