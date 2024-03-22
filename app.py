@@ -55,7 +55,7 @@ with col2:
 
      authenticator = stauth.Authenticate(names,usernames,hashed_passwords,
               'cookie-name','cookie-key', cookie_expiry_days=0)
-     print("oi")
+
      name, authentication_status, username = authenticator.login('Login','main')
  
 
