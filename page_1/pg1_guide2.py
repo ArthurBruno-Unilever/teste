@@ -70,40 +70,25 @@ def run_guide2():
 
         if 'predict_pg1_guide3' not in st.session_state:
             st.session_state['predict_pg1_guide3'] = False
-        option_v = st.selectbox('What type of viscosity file?',
-            ('CSV', 'Excel'))
-        
-        option_p = st.selectbox('What type of processes file?',
-            ('CSV', 'Excel'))
         
         with st.form("Inputs3"):
-            if option_v == 'CSV':
-                uploaded_file_v = st.file_uploader("Choose a CSV file for viscosity:", help = "Please enter a CSV viscosity")
-                file = True
-                if uploaded_file_v is not None: 
-                    dataframe_v = pd.read_csv(uploaded_file_v, index_col = False)                  
-                    
-                else:
-                    file = False
-            elif option_v == 'Excel':
-                uploaded_file_v = st.file_uploader("Choose a xlsx file for viscosity:", help = "Please enter a xlsx viscosity")
-                file = True
-                if uploaded_file_v is not None: 
-                    dataframe_v = pd.read_excel(uploaded_file_v, index_col = False)   
             
-            if option_p == 'CSV':
-                uploaded_file_p = st.file_uploader("Choose a CSV file for processes:", help = "Please enter a CSV processes file")
-                file = True
-                if uploaded_file_p is not None: 
-                    dataframe_p = pd.read_csv(uploaded_file_p, index_col = False)                  
+            uploaded_file_v = st.file_uploader("Choose a CSV file for viscosity:", help = "Please enter a CSV viscosity")
+            file = True
+            if uploaded_file_v is not None: 
+                dataframe_v = pd.read_csv(uploaded_file_v, index_col = False)                  
                     
-                else:
-                    file = False
-            elif option_p == 'Excel':
-                uploaded_file_p = st.file_uploader("Choose a xlsx file for processes:", help = "Please enter a xlsx processes file")
-                file = True
-                if uploaded_file_p is not None: 
-                    dataframe_p = pd.read_excel(uploaded_file_p, index_col = False) 
+            else:
+                file = False
+            
+            uploaded_file_p = st.file_uploader("Choose a CSV file for processes:", help = "Please enter a CSV processes file")
+            file = True
+            if uploaded_file_p is not None: 
+                dataframe_p = pd.read_csv(uploaded_file_p, index_col = False)                  
+                    
+            else:
+                file = False
+
 
             submitted = st.form_submit_button("Predict")
             
