@@ -20,11 +20,9 @@ def run_guide2():
             Your file must include only the spreadsheet header and rows.
         ''')
         st.markdown("---")
-        st.write("Follow the example below, your spreadsheet must match up to this model for each spreadsheet:")
-        st.subheader("Viscosity data example:")
-        
-        st.subheader("Processes data example:")
-        
+        st.write("Your spreadsheet must match up to this model for each spreadsheet")
+        st.markdown("---")
+        st.write("To see the model check Display Data")
         st.markdown("---")
         st.write("After that, download your CSV file")
         
