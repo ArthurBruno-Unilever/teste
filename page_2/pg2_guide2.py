@@ -26,7 +26,7 @@ def run_guide2():
         st.subheader("Processes data example:")
         
         st.markdown("---")
-        st.write("After that, download your CSV or xlsx file")
+        st.write("After that, download your CSV file")
         
         st.markdown("---")
         st.write("Finally, click the 'Browse files' button to upload your file:")
@@ -41,44 +41,22 @@ def run_guide2():
             st.session_state['download_pg2_guide3'] = False
 
     try:
-        option_v = st.selectbox('What type of viscosity file?',
-            ('CSV', 'Excel'))
-        
-        option_p = st.selectbox('What type of processes file?',
-            ('CSV', 'Excel'))
         with st.form("Inputs3"):
-            if option_v == 'CSV':
-                uploaded_file_v = st.file_uploader("Upload CSV viscosity spreadsheet:", help = "Please enter a CSV file")
-                file_v = True
-                if uploaded_file_v is not None: 
-                    added_df_v = pd.read_csv(uploaded_file_v, index_col = False)                  
-                else:
-                    file_v = False
-                    added_df_v = None
-            elif option_v == 'Excel':
-                uploaded_file_v = st.file_uploader("Upload xlsx viscosity spreadsheet:", help = "Please enter a xlsx file")
-                file_v = True
-                if uploaded_file_v is not None: 
-                    added_df_v = pd.read_excel(uploaded_file_v, index_col = False)                  
-                else:
-                    file_v = False
-                    added_df_v = None
-            if option_p == 'CSV':
-                uploaded_file_p = st.file_uploader("Upload processes spreadsheet:", help = "Please enter a CSV file")
-                file_p = True
-                if uploaded_file_p is not None: 
-                    added_df_p = pd.read_csv(uploaded_file_p, index_col = False)                  
-                else:
-                    file_p = False
-                    added_df_p = None
-            elif option_p == 'Excel':
-                uploaded_file_p = st.file_uploader("Upload xlsx processes spreadsheet:", help = "Please enter a xlsx file")
-                file_p = True
-                if uploaded_file_p is not None: 
-                    added_df_p = pd.read_excel(uploaded_file_p, index_col = False)                  
-                else:
-                    file_p = False
-                    added_df_p = None
+            uploaded_file_v = st.file_uploader("Upload CSV viscosity spreadsheet:", help = "Please enter a CSV file")
+            file_v = True
+            if uploaded_file_v is not None: 
+                added_df_v = pd.read_csv(uploaded_file_v, index_col = False)                  
+            else:
+                file_v = False
+                added_df_v = None
+                
+            uploaded_file_p = st.file_uploader("Upload processes spreadsheet:", help = "Please enter a CSV file")
+            file_p = True
+            if uploaded_file_p is not None: 
+                added_df_p = pd.read_csv(uploaded_file_p, index_col = False)                  
+            else:
+                file_p = False
+                added_df_p = None
 
             submitted = st.form_submit_button("Add data")
 
