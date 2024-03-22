@@ -52,7 +52,7 @@ def run_guide2():
         st.markdown("---")
         st.write("Follow the example below, your spreadsheet must match up to this model for each spreadsheet:")
         st.markdown("---")
-        
+        st.write(dataframe("for_display/display_visc.csv"))
         st.write("After that, download your CSV file")
         
         st.markdown("---")
